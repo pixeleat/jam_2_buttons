@@ -11,6 +11,8 @@ public class MainScene : MonoBehaviour
     [SerializeField] TMP_Text speechText;
     [SerializeField] TMP_Text characterText;
 
+    [SerializeField] TMP_Text[] choiceText;
+
     // Start is called before the first frame update
     void Start()
     {
