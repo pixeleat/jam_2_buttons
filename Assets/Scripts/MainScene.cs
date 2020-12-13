@@ -28,8 +28,6 @@ public class MainScene : MonoBehaviour
         drawer = new Drawer(this);
         currentState = firstState;
         drawer.DrawAll();
-
-        Debug.Log("index" + choiceText[3]);
     }
 
     void Update()

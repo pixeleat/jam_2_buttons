@@ -3,7 +3,7 @@
 /*
  * Updates objects in the scene
  */
-class Drawer
+public class Drawer
 {
     readonly MainScene scene;
 
