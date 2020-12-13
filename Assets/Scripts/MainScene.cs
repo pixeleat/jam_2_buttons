@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainScene : MonoBehaviour
 {
-    State state;
+    [SerializeField] State currentState;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +15,10 @@ public class MainScene : MonoBehaviour
     void Update()
     {
         
+    }
+
+    State getCurrentState()
+    {
+        return currentState;
     }
 }
