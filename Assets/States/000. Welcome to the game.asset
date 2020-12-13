@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 227e30a3a4af74c4a8144dce523b3ea4, type: 2}
   storyText: Welcome to the game!
-  nextStates:
-  - {fileID: 11400000}
+  choiceText:
+  - first
+  - second
+  choiceState:
   - {fileID: 11400000, guid: 06da82af1d1b91b408e82a237c3b7534, type: 2}
   - {fileID: 11400000, guid: cc2dc84ee0e739c4088cf00216c39e1e, type: 2}

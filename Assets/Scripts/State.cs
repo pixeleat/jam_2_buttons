@@ -1,23 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
+[Serializable]
 [CreateAssetMenu(menuName="State")]
 public class State : ScriptableObject
 {
     [SerializeField] Character character;
     [TextArea(14, 10)] [SerializeField] string storyText;
-    [SerializeField] State[] nextStates;
+    [SerializeField] string[] choiceText;
+    [SerializeField] State[] choiceState;
     // sound
     // delay sound
     // background
 
-    
+
     public string GetStateStory()
     {
         return storyText;
     }
-    public State[] GetNextStates()
+    public string[] GetChoicesText()
     {
-        return nextStates;
+        return choiceText;
+    }
+    public State[] GetChoiceState()
+    {
+        return choiceState;
     }
 
     public string GetText()
