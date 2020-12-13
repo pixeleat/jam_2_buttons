@@ -8,12 +8,14 @@ public class State : ScriptableObject
 {
     [SerializeField] Character character;
     [TextArea(14, 10)] [SerializeField] string storyText;
+
+    // size of choiceText and choiseState must be equal!
     [SerializeField] string[] choiceText;
     [SerializeField] State[] choiceState;
+    // TODO:
     // sound
     // delay sound
     // background
-
 
     public string GetStateStory()
     {
@@ -36,5 +38,10 @@ public class State : ScriptableObject
     public Character GetCharacter()
     {
         return character;
+    }
+
+    public int GetСhoiceAmount()
+    {
+        return choiceState.Length;
     }
 }

@@ -4,23 +4,34 @@ using TMPro;
 
 public class MainScene : MonoBehaviour
 {
+    /*
+     * States
+     */
     [SerializeField] State firstState;
     State currentState;
     int index_of_current_choose = 0;
 
+    /*
+     * Text Objects
+     */
     [SerializeField] TMP_Text speechText;
     [SerializeField] TMP_Text characterText;
-
     [SerializeField] TMP_Text[] choiceText;
 
-    // Start is called before the first frame update
+    /*
+     * Drawer
+     */
+    Drawer drawer;
+
     void Start()
     {
+        drawer = new Drawer(this);
         currentState = firstState;
-        DrawAll();
+        drawer.DrawAll();
+
+        Debug.Log("index" + choiceText[3]);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -37,51 +48,45 @@ public class MainScene : MonoBehaviour
     {
         currentState = currentState.GetChoiceState()[index_of_current_choose];
         index_of_current_choose = 0;
-        // set background
-
-        DrawAll();
-
-        Debug.Log("load new scene. index: " + index_of_current_choose + "; text: " + currentState.GetText());
+        drawer.DrawAll();
     }
 
     void UpOrDownChoose()
     {
         index_of_current_choose++;
-        index_of_current_choose %= currentState.GetChoiceState().Length;
-        // update UI
-        Debug.Log("Current index: " + index_of_current_choose);
-        DrawChoiceText();
+        index_of_current_choose %= currentState.GetСhoiceAmount();
+        drawer.DrawAll();
     }
 
-    private void DrawAll()
+    public void SetSpeechText(string text)
     {
-        DrawSpeechText();
-        DrawCharacter();
-        DrawChoiceText();
+        speechText.text = text;
     }
 
-    void DrawChoiceText()
+    public void SetCharacterText(string text)
     {
-        int i = 0;
-        for (; i < currentState.GetChoicesText().Length; ++i)
-        {
-            choiceText[i].enabled = true;
-            choiceText[i].text = currentState.GetChoicesText()[i];
-            choiceText[i].color = Color.white;
-        }
-        for (int j = i; j < choiceText.Length; ++j)
-        {
-            choiceText[j].enabled = false;
-        }
-        choiceText[index_of_current_choose].color = Color.blue;
+        characterText.text = text;
     }
 
-    private void DrawSpeechText()
+    public void SetPropertiesForText(int index, bool vis, string text, Color color)
     {
-        speechText.text = currentState.GetText();
+        choiceText[index].enabled = vis;
+        choiceText[index].text = text;
+        choiceText[index].color = color;
     }
-    private void DrawCharacter()
+
+    public int GetIndexOfCurrentChoose()
     {
-        characterText.text = currentState.GetCharacter().GetNickname();
+        return index_of_current_choose;
+    }
+
+    public State GetCurrentState()
+    {
+        return currentState;
+    }
+
+    public int GetСountOfTextsToChoose()
+    {
+        return choiceText.Length;
     }
 }
