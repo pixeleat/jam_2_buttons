@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4873b7e9fff992547a0583c9e25937f9, type: 3}
-  m_Name: 000. Welcome to the game
+  m_Name: 002. Second
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 227e30a3a4af74c4a8144dce523b3ea4, type: 2}
-  storyText: Welcome to the game!
+  storyText: second state
   nextStates:
-  - {fileID: 11400000}
-  - {fileID: 11400000, guid: 06da82af1d1b91b408e82a237c3b7534, type: 2}
-  - {fileID: 11400000, guid: cc2dc84ee0e739c4088cf00216c39e1e, type: 2}
+  - {fileID: 11400000, guid: 023a03815cfd6a047af2f22b5c4529c7, type: 2}

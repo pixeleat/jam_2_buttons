@@ -19,4 +19,9 @@ public class State : ScriptableObject
     {
         return nextStates;
     }
+
+    public string GetText()
+    {
+        return storyText;
+    }
 }
