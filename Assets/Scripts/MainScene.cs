@@ -22,4 +22,12 @@ public class MainScene : MonoBehaviour
     {
         return currentState;
     }
+
+    void LoadState(State nextState)
+    {
+        currentState = nextState;
+        // get background
+        // get text
+        // get name of character
+    }
 }

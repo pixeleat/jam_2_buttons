@@ -11,13 +11,17 @@ public class UserInputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // load current sceen
+        // 
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("Z is pressed");
+            // down/up choose
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("X is pressed");
+            // load next sceen
         }
     }
 }
