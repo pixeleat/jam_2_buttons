@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class MainScene : MonoBehaviour
 {
+    [SerializeField] State currentState;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    State getCurrentState()
+    {
+        return currentState;
     }
 }
