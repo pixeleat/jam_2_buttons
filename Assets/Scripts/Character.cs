@@ -4,4 +4,9 @@
 public class Character : ScriptableObject
 {
     [SerializeField] string nickname;
+
+    public string GetNickname()
+    {
+        return nickname;
+    }
 }

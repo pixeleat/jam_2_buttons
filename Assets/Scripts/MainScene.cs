@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainScene : MonoBehaviour
 {
     [SerializeField] State firstState;
     State currentState;
     int index_of_current_choose = 0;
+
+    [SerializeField] TMP_Text speechText;
+    [SerializeField] TMP_Text characterText;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,8 @@ public class MainScene : MonoBehaviour
         // set background
         // set text
         // set name of character
+        speechText.text = currentState.GetText();
+        characterText.text = currentState.GetCharacter().GetNickname();
         Debug.Log("load new scene. index: " + index_of_current_choose + "; text: " + currentState.GetText());
     }
 

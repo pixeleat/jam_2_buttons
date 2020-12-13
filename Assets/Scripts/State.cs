@@ -24,4 +24,9 @@ public class State : ScriptableObject
     {
         return storyText;
     }
+
+    public Character GetCharacter()
+    {
+        return character;
+    }
 }
