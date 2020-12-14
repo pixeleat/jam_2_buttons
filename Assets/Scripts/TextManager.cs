@@ -9,7 +9,7 @@ public class TextManager : MonoBehaviour
 
     [SerializeField] MainScene scene;
 
-    void Update()
+    public void DrawAll()
     {
         DrawChoiceText();
         DrawSpeechText();
@@ -20,16 +20,16 @@ public class TextManager : MonoBehaviour
     {
         for (int i = 0; i < scene.GetCurrentState().GetСhoiceAmount(); ++i)
         {
-            Color color = Color.white;
+            Color color = Constants.DEFAULT_TEXT_COLOR;
             if (scene.GetIndexOfCurrentChoose() == i)
             {
-                color = Color.blue;
+                color = Constants.SELECTED_TEXT_COLOR;
             }
             SetPropertiesForText(i, true, scene.GetCurrentState().GetChoicesText()[i], color);
         }
         for (int j = scene.GetCurrentState().GetСhoiceAmount(); j < Constants.MAX_CHOISE_AMOUNT; ++j)
         {
-            SetPropertiesForText(j, false, "", Color.white);
+            SetPropertiesForText(j, false, "", Constants.DEFAULT_TEXT_COLOR);
         }
     }
 
